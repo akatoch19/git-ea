@@ -33,7 +33,7 @@ resource "aws_ecs_task_definition" "gitea" {
   container_definitions = jsonencode([
     {
       name      = "gitea"
-      image     = "gitea/gitea:1.21.0"
+      image     = "gitea/gitea:latest"
       essential = true
       portMappings = [
         {
@@ -54,6 +54,14 @@ resource "aws_ecs_task_definition" "gitea" {
         { name = "DB_USER", value = "gitea" },
         { name = "DB_PASSWD", value = "giteapassword" }
       ]
+/*      logConfiguration = {
+       logDriver = "awslogs"
+       options = {
+         awslogs-group         = "/ecs/gitea"
+         awslogs-region        = "us-east-1"
+         awslogs-stream-prefix = "ecs"
+       }
+     } */
     }
   ])
 }
