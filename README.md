@@ -1,2 +1,0 @@
-# git-ea
-git-ea
