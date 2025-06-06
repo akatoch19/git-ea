@@ -20,7 +20,7 @@ module "db" {
   allocated_storage   = 20
   db_name             = "giteadb"
   username            = "gitea"
-  password            = "giteapassword"
+  password            = "testpasswordea"
   publicly_accessible = false
   skip_final_snapshot = true
 
